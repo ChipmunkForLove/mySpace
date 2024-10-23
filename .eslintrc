@@ -1,0 +1,83 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "check-file"],
+  "settings": {
+    "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": ["tsconfig.json", "packages/*/tsconfig.json"]
+      },
+      "node": true
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "prettier/prettier": ["warn"],
+    "linebreak-style": ["error", "unix"],
+    "prefer-const": "error",
+    "no-var": "error",
+    "no-console": "off",
+    "no-useless-escape": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "no-param-reassign": ["warn", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
+    "curly": ["error", "multi-line"],
+    "generator-star-spacing": "off",
+    "prefer-promise-reject-errors": "off",
+    "eqeqeq": "error",
+    "check-file/no-index": "warn",
+    "import/no-named-as-default-member": "off",
+    "import/no-unresolved": "off",
+    "import/no-cycle": ["error", { "maxDepth": 5, "ignoreExternal": true }],
+    "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
+    "react/jsx-no-duplicate-props": ["error", { "ignoreCase": true }],
+    "react/jsx-no-undef": "error",
+    "react/jsx-pascal-case": [
+      "error",
+      {
+        "allowAllCaps": true,
+        "ignore": []
+      }
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-deprecated": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-is-mounted": "error",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-render-return": "error",
+    "react/self-closing-comp": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
+}
